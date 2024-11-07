@@ -79,22 +79,85 @@
 
 
 
-import React from 'react'
-import Image from './Image'
-import './App.css'
+// import React from 'react'
+// import Image from './Image'
+// import './App.css'
+// import data from './Data'
 
+
+// function App() {
+
+  
+//   console.log(data[0].name)
+//   return (
+//     <>
+//      <div className='parent'>
+//      <Image name={data[0].name} img={data[0].img}/>
+//      <Image name={data[1].name} img={data[1].img}/>
+//      <Image name={data[2].name} img={data[2].img}/>
+//      <Image name={data[3].name} img={data[3].img}/>
+
+
+//           {
+//             data.map((value)=>{
+//                 return (
+//                   <>
+//                   <Image name={value.name} img={value.img} rating={value.rating}/>
+//                   </>
+//                 )
+//             })
+//           }
+
+
+//      </div>
+//     </>
+//   )
+// }
+
+
+
+
+
+
+
+
+
+
+import React from 'react'
+import './App.css'
+import Header from './header/Header'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Home from './header/home/Home'
+import About from './header/about/About'
+import Contact from './header/contact/Contact'
+import Register from './header/register/Register'
+import Footer from './footer/Footer'
 
 function App() {
+
   return (
     <>
-     <div className='parent'>
-     <Image name="chiense" img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597"/>
-     <Image name="berger" img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/6/11/55d0daa1-ad2e-4893-be06-4709c5c68d49_41350.JPG"/>
-     <Image name="pizza" img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/7/18/a2d94cd9-ac91-40de-b003-0a88f76c7f00_786153.jpg"/>
-     <Image name="razma" img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/wyefko3c0ggkigqcf9u5"/>
-     </div>
+    
+    <BrowserRouter>
+      <Header/>
+     <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/about' element={<About/>}/>
+      <Route path='/contact' element={<Contact/>}/>
+      <Route path='/register' element={<Register/>}/>
+     </Routes>
+     <Footer/>
+    </BrowserRouter>
+    
     </>
   )
 }
 
+
 export default App
+
+
+
+
+
+

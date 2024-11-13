@@ -134,10 +134,9 @@ import Register from './header/register/Register'
 import Footer from './footer/Footer'
 
 function App() {
-
   return (
     <>
-    
+     
     <BrowserRouter>
       <Header/>
      <Routes>
